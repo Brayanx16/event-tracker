@@ -4,14 +4,12 @@ import Evento from "../Evento";
 import React from "react";
 import useListEvent from "../../state/hooks/useListEvent";
 
-const ListaDeEventos: React.FC<{
-  aoFiltroAplicado: (data: Date | null) => void;
-}> = ({ aoFiltroAplicado }) => {
+const ListaDeEventos: React.FC<{}> = () => {
   const listEvents = useListEvent();
 
   return (
     <section>
-      <Filtro aoFiltroAplicado={aoFiltroAplicado} />
+      <Filtro />
       <div className={style.Scroll}>
         {listEvents.map((event) => (
           <Evento evento={event} key={event.id} />

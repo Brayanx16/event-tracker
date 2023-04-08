@@ -1,9 +1,9 @@
 import { IEvento } from "../../interfaces/IEvento";
 import { useRecoilValue } from "recoil";
-import { listEventsState } from "../atom";
+import { stateFilteredEvents } from "../selectors";
 
 const useListEvent = () => {
-  return useRecoilValue<IEvento[]>(listEventsState);
+  return useRecoilValue<IEvento[]>(stateFilteredEvents);
 };
 
 export default useListEvent;
